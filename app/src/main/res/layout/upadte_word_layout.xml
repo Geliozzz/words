@@ -2,7 +2,8 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <EditText
         android:layout_width="match_parent"
@@ -15,8 +16,29 @@
         android:id="@+id/edt_update_RUS"
         android:hint="@string/Russian"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_update_save"
         android:text="@string/update_word"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_translate_on_eng"
+        android:text="@string/translate_on_english"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_translate_on_rus"
+        android:text="@string/translate_on_russian"
+        />
+
+    <ProgressBar
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/procB_wait"
+        android:layout_weight="0.38"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"/>
+
 </LinearLayout>

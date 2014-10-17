@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
@@ -12,9 +13,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import android.os.Handler;
-import android.widget.Toast;
 
 
 public class LearnActivity extends Activity {
@@ -28,6 +26,7 @@ public class LearnActivity extends Activity {
     private int trueAnswer;
     private Handler handler;
     private final static long DELAY_MS = 1200; //Задержка отображения Верно не верно
+    private static final int TRY = 1000;
 
 
     @Override
@@ -82,19 +81,31 @@ public class LearnActivity extends Activity {
 
     private Word getRandomWord(ArrayList<Word> words) {
         Random random = new Random();
-        int index = random.nextInt(words.size() - 1);
+        int index = random.nextInt(words.size());
         return wordArrayList.get(index);
     }
 
     private void initQuestion(ArrayList<Word> wordArrayList) {
         boolean needMoreWords = false; // Нужен в случае если слов не хватает
+
         Word trueWord = getRandomWord(wordArrayList);
         /*Пользователь может сделать английское слово пустым*/
         int cnt = 0;
         while (trueWord.getRus().equals("") || trueWord.getEng().equals("")){
             cnt++;
-            if (cnt > 10){
-                trueWord = new Word("fill", "заполнить");
+            if (cnt > TRY){
+                //trueWord = new Word("fill", "заполнить");
+               // trueWord = wordArrayList.get(wordArrayList.size() / );
+                /*Формируем список только с нормальными словами*/
+                ArrayList<Word> normWords = new ArrayList<Word>();
+                for (Word word: wordArrayList){
+                    if (!word.getEng().equals("") && !word.getRus().equals("")){
+                        normWords.add(word);
+                    }
+                }
+                if (normWords.size() == 0){
+                    trueWord = new Word("fill", "заполнить");
+                } else trueWord = getRandomWord(normWords); //БАГ!!!!!!!!!!!!!!!!
                 break;
             }
         }
@@ -116,7 +127,7 @@ public class LearnActivity extends Activity {
             fake1 = getRandomWord(wordArrayList);
             fake2 = getRandomWord(wordArrayList);
             fake3 = getRandomWord(wordArrayList);
-            if (count > 10) {
+            if (count > TRY) {
                 needMoreWords = true; // Флаг нужен для записания стандартный значений в кнопки
                 break;
             }

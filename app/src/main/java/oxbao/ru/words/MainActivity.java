@@ -10,6 +10,16 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
+    private static final String CLIENT_ID = "words_translate";
+    private static final String CLIENT_SECRET = "70qhkTNyF9Y42Mljtbt7hUC5rcT8mmOd/QdCjBkRm1U=";
+
+    public static String getClientId() {
+        return CLIENT_ID;
+    }
+
+    public static String getClientSecret() {
+        return CLIENT_SECRET;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

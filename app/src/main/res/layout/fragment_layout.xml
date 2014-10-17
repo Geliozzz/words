@@ -32,20 +32,20 @@
         android:drawableTop="@drawable/ic_launcher"
         android:text="@string/edit" />
 
-    <!--  Events Button -->
+    <!--  Events Button -
     <Button
         android:id="@+id/btn_events"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/ic_launcher"
         android:text="Events" />
 
-    <!--  Photos Button -->
+      Photos Button -
     <Button
         android:id="@+id/btn_photos"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/ic_launcher"
         android:visibility="invisible"
-        android:text="Photos" />
+        android:text="Photos" /> -->
 
 </oxbao.ru.words.DashboardLayout>
 

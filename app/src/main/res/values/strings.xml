@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Words</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_DB">Записать в БД</string>
+    <string name="check_words">Учим</string>
+    <string name="add_word">Добавить</string>
+    <string name="del_word">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="delete">Удалить</string>
+    <string name="English">Английский</string>
+    <string name="Russian">Русский</string>
+    <string name="update_word">Обновить</string>
+    <string name="right">Верно!</string>
+    <string name="wrong">Ошибка</string>
+    <string name="add">добавьте</string>
+    <string name="more">больше</string>
+    <string name="words">слов</string>
+    <string name="alert_title">Сообщение</string>
+    <string name="alert_message">Недостаточно слов в базе данных. Хотите добавить?</string>
+    <string name="alert_no">Нет</string>
+    <string name="alert_yes">Да</string>
+    
+
+    <string-array name="standart_words">
+        <item>fire=огонь</item>
+        <item>love=любовь</item>
+        <item>red=красный</item>
+        <item>heart=сердце</item>
+        <item>light=свет</item>
+        <item>world=мир</item>
+        <item>cat=кошка</item>
+        <item>dog=собака</item>
+        <item>war=война</item>
+        <item>water=вода</item>
+        <item>earth=земля</item>
+        <item>find=найти</item>
+        <item>permission=разрешение</item>
+        <item>mail=почта</item>
+        <item>describe=описывать</item>
+        <item>own=самостоятельно</item>
+    </string-array>
+
+</resources>

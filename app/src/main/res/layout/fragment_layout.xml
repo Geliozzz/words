@@ -1,0 +1,52 @@
+<oxbao.ru.words.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe" >
+    <!--  Check Button -->
+    <Button
+        android:id="@+id/btn_learn"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="@string/check_words" />
+
+    <!--  addWord  Button -->
+    <Button
+        android:id="@+id/btn_addWord"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="@string/add_word" />
+
+    <!--  del_word Button -->
+    <Button
+        android:id="@+id/btn_del_word"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="@string/del_word" />
+
+    <!--  view all Button -->
+    <Button
+        android:id="@+id/btn_edit_db"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="@string/edit" />
+
+    <!--  Events Button -->
+    <Button
+        android:id="@+id/btn_events"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="Events" />
+
+    <!--  Photos Button -->
+    <Button
+        android:id="@+id/btn_photos"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:visibility="invisible"
+        android:text="Photos" />
+
+</oxbao.ru.words.DashboardLayout>
+
+<!-- android:drawableTop="@drawable/btn_photos"-->

@@ -25,6 +25,8 @@
     <string name="translate">Перевести</string>
     <string name="translate_on_english">Перевод на английский</string>
     <string name="translate_on_russian">Перевод на русский</string>
+    <string name="statistic">Стат.</string>
+    <string name="help">помощь</string>
     
 
     <string-array name="standart_words">

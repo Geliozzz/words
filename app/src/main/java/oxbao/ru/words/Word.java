@@ -7,7 +7,7 @@ import android.util.Log;
 /**
  * Created by pocheptsov on 07.10.2014.
  */
-public class Word implements Parcelable {
+public class Word implements Parcelable, Comparable {
 
     final static String LOG_TAG = "word_log";
 
@@ -19,8 +19,6 @@ public class Word implements Parcelable {
         this.eng = eng;
         this.rus = rus;
     }
-
-
 
     public Word() {
     }
@@ -108,4 +106,10 @@ public class Word implements Parcelable {
             return new Word[size];
         }
     };
+
+    @Override
+    public int compareTo(Object o) {
+        Word cmp = (Word)o;
+        return this.getEng().compareTo(cmp.getEng());
+    }
 }

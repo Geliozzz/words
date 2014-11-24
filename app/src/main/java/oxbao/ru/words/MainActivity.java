@@ -1,14 +1,14 @@
 package oxbao.ru.words;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     private static final String CLIENT_ID = "words_translate";
     private static final String CLIENT_SECRET = "70qhkTNyF9Y42Mljtbt7hUC5rcT8mmOd/QdCjBkRm1U=";
@@ -24,6 +24,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_layout);
+
+        getSupportActionBar();
 
         Button btn_addWord = (Button)findViewById(R.id.btn_addWord);
         Button btn_edit_DB = (Button)findViewById(R.id.btn_edit_db);
@@ -76,7 +78,7 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_help) {
             return true;
         }
         return super.onOptionsItemSelected(item);

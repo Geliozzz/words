@@ -2,26 +2,23 @@ package oxbao.ru.words;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
-
+import java.util.Collections;
 import java.util.List;
 
 public class EditArrayAdapter extends ArrayAdapter<Word> {
     private Context context;
     private List<Word> values;
-    private   SqliteWordHelper db = new SqliteWordHelper(getContext());
-
 
     public EditArrayAdapter(Context context, List<Word> objects) {
         super(context, R.layout.edit_adapter, objects);
         this.context = context;
+        Collections.sort(objects);
         this.values = objects;
     }
 

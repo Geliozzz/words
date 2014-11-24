@@ -22,7 +22,6 @@ public class DeleteDBActivity extends Activity {
 
         List<Word> list = db.getAllWords();
 
-       // EditArrayAdapter adapter = new EditArrayAdapter(getApplicationContext(), list);
        final MyDelAdapter adapter = new MyDelAdapter(getApplicationContext(), list);
        lvDel.setAdapter(adapter);
 

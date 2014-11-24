@@ -27,6 +27,11 @@ public class LearnActivity extends Activity {
     private Handler handler;
     private final static long DELAY_MS = 1200; //Задержка отображения Верно не верно
     private static final int TRY = 1000;
+    private final static int BUTTON_1 = 1;
+    private final static int BUTTON_2 = 2;
+    private final static int BUTTON_3 = 3;
+    private final static int BUTTON_4 = 4;
+    private String trueString;
 
 
     @Override
@@ -58,9 +63,9 @@ public class LearnActivity extends Activity {
                                     //finish();
                                     //Заполняем базу данных стандартным набором слов если пользователь согласен
                                     String[] arr = getResources().getStringArray(R.array.standart_words);
-                                    for (int i = 0; i < arr.length; i++){
-                                       String[] arr_split = arr[i].split("=");
-                                       db.addWord(new Word(arr_split[0], arr_split[1]));
+                                    for (int i = 0; i < arr.length; i++) {
+                                        String[] arr_split = arr[i].split("=");
+                                        db.addWord(new Word(arr_split[0], arr_split[1]));
 
                                     }
                                     db.close();
@@ -91,24 +96,26 @@ public class LearnActivity extends Activity {
         Word trueWord = getRandomWord(wordArrayList);
         /*Пользователь может сделать английское слово пустым*/
         int cnt = 0;
-        while (trueWord.getRus().equals("") || trueWord.getEng().equals("")){
+        while (trueWord.getRus().equals("") || trueWord.getEng().equals("")) {
             cnt++;
-            if (cnt > TRY){
+            if (cnt > TRY) {
                 //trueWord = new Word("fill", "заполнить");
-               // trueWord = wordArrayList.get(wordArrayList.size() / );
+                // trueWord = wordArrayList.get(wordArrayList.size() / );
                 /*Формируем список только с нормальными словами*/
                 ArrayList<Word> normWords = new ArrayList<Word>();
-                for (Word word: wordArrayList){
-                    if (!word.getEng().equals("") && !word.getRus().equals("")){
+                for (Word word : wordArrayList) {
+                    if (!word.getEng().equals("") && !word.getRus().equals("")) {
                         normWords.add(word);
                     }
                 }
-                if (normWords.size() == 0){
+                if (normWords.size() == 0) {
                     trueWord = new Word("fill", "заполнить");
                 } else trueWord = getRandomWord(normWords); //БАГ!!!!!!!!!!!!!!!!
                 break;
             }
         }
+
+        trueString = trueWord.getRus();
 
         txtQuesWord.setText(trueWord.getEng());
 
@@ -207,84 +214,46 @@ public class LearnActivity extends Activity {
         btnVersion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (trueAnswer == 1) {
-                    txtQuesWord.setText(getResources().getString(R.string.right));
-                } else txtQuesWord.setText(getResources().getString(R.string.wrong));
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(DELAY_MS);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        handler.sendEmptyMessage(1);
-                    }
-                });
-                t.start();
+               answer(BUTTON_1);
             }
         });
         btnVersion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (trueAnswer == 2) {
-                    txtQuesWord.setText(getResources().getString(R.string.right));
-                } else txtQuesWord.setText(getResources().getString(R.string.wrong));
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(DELAY_MS);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        handler.sendEmptyMessage(1);
-                    }
-                });
-                t.start();
+                answer(BUTTON_2);
             }
         });
         btnVersion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (trueAnswer == 3) {
-                    txtQuesWord.setText(getResources().getString(R.string.right));
-                } else txtQuesWord.setText(getResources().getString(R.string.wrong));
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(DELAY_MS);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        handler.sendEmptyMessage(1);
-                    }
-                });
-                t.start();
+                answer(BUTTON_3);
             }
         });
         btnVersion4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (trueAnswer == 4) {
-                    txtQuesWord.setText(getResources().getString(R.string.right));
-                } else txtQuesWord.setText(getResources().getString(R.string.wrong));
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(DELAY_MS);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        handler.sendEmptyMessage(1);
-                    }
-                });
-                t.start();
+                answer(BUTTON_4);
             }
         });
 
 
+    }
+
+    private void answer(int numButton) {
+        if (trueAnswer == numButton) {
+            txtQuesWord.setText(getResources().getString(R.string.right));
+        } else txtQuesWord.setText(getResources().getString(R.string.wrong) + "(" + trueString + ")");
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(DELAY_MS);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                handler.sendEmptyMessage(1);
+            }
+        });
+        t.start();
     }
 }

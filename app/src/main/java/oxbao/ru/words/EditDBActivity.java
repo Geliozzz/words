@@ -1,22 +1,19 @@
 package oxbao.ru.words;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.math.RoundingMode;
 import java.util.List;
 
 
 public class EditDBActivity extends Activity {
     private   SqliteWordHelper db = new SqliteWordHelper(this);
     private ListView lvEdit;
+    final String LOG_TAG = "myLogs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,13 +33,13 @@ public class EditDBActivity extends Activity {
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         List<Word> list = db.getAllWords();
+
         final EditArrayAdapter adapter = new EditArrayAdapter(getApplicationContext(), list);
         lvEdit.setAdapter(adapter);
         db.close();

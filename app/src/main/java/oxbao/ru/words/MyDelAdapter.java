@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class MyDelAdapter extends ArrayAdapter<Word> {
 
     public MyDelAdapter(Context context, List<Word> objects) {
         super(context, R.layout.del_adapter, objects);
+        Collections.sort(objects);
         this.context = context;
         this.values = objects;
     }

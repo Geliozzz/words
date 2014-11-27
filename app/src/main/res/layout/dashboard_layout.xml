@@ -13,5 +13,4 @@
 
     <!--  Include Footer -->
     <include layout="@layout/footer_layout"/>
-
 </LinearLayout>

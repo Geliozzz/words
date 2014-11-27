@@ -1,9 +1,9 @@
 package oxbao.ru.words;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +16,7 @@ import com.memetix.mst.translate.Translate;
 
 
 /**Activity need for upgrade word in database*/
-public class UpdateWordActivity extends Activity {
+public class UpdateWordActivity extends ActionBarActivity {
     final String LOG_TAG = "myLogs";
     private EditText edt_eng;
     private EditText edt_rus;

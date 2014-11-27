@@ -26,7 +26,19 @@
     <string name="translate_on_english">Перевод на английский</string>
     <string name="translate_on_russian">Перевод на русский</string>
     <string name="statistic">Стат.</string>
-    <string name="help">помощь</string>
+    <string name="help">справка</string>
+    <string name="helpText">
+      <ol><li1>Для перевода требуется подключение к сети интернет.</li1></ol>
+     <ol> <li2>Пользователь сам формирует список необходимых слов.</li2> </ol>
+     <ol> <li3>Приложение позволяет добавлять, удалять и редактировать слова.</li3> </ol>
+<html>
+    <h1>vdfsgdfsgdfs</h1>
+
+    <ol2>vdfsgdfsgdfs</ol2>
+</html>
+
+
+    </string>
     
 
     <string-array name="standart_words">

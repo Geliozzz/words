@@ -1,7 +1,7 @@
 package oxbao.ru.words;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -9,7 +9,7 @@ import android.widget.ListView;
 import java.util.HashSet;
 import java.util.List;
 
-public class DeleteDBActivity extends Activity {
+public class DeleteDBActivity extends ActionBarActivity {
     private   SqliteWordHelper db = new SqliteWordHelper(this);
 
     @Override

@@ -1,12 +1,12 @@
 package oxbao.ru.words;
 /*Проверят ьпри пустой БД. При одном слове в БД валится исключание*/
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class LearnActivity extends Activity {
+public class LearnActivity extends ActionBarActivity {
     private SqliteWordHelper db = new SqliteWordHelper(this);
     private ArrayList<Word> wordArrayList;
     private TextView txtQuesWord;

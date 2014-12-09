@@ -36,7 +36,7 @@ public class UpdateWordActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.upadte_word_layout);
+        setContentView(R.layout.add_word_layout);
         Log.d(LOG_TAG, "getParcelExtra");
         word = (Word) getIntent().getParcelableExtra(Word.class.getCanonicalName()); // Recive object
         /*Can word be null?*/
@@ -51,12 +51,12 @@ public class UpdateWordActivity extends ActionBarActivity {
     }
 
     private void initGUI(){
-        edt_eng = (EditText)findViewById(R.id.edt_update_ENG);
-        edt_rus = (EditText)findViewById(R.id.edt_update_RUS);
-        btn_update_db = (Button) findViewById(R.id.btn_update_save);
-        btn_translate_on_eng = (Button)findViewById(R.id.btn_translate_on_eng);
-        btn_translate_on_rus = (Button)findViewById(R.id.btn_translate_on_rus);
-        pb_wait = (ProgressBar) findViewById(R.id.procB_wait);
+        edt_eng = (EditText)findViewById(R.id.edtRus);
+        edt_rus = (EditText)findViewById(R.id.edtEng);
+        btn_update_db = (Button) findViewById(R.id.btn_write);
+        btn_translate_on_eng = (Button)findViewById(R.id.btn_trans_on_Eng);
+        btn_translate_on_rus = (Button)findViewById(R.id.btn_trans_on_RUS);
+        pb_wait = (ProgressBar) findViewById(R.id.procB_wait_add);
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {

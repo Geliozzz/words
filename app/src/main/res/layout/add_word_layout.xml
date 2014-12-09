@@ -61,11 +61,7 @@
         android:layout_gravity="center_horizontal"
         android:visibility="invisible"
         android:indeterminateDrawable="@drawable/spinner_ring"
-
         android:layout_toEndOf="@+id/textView"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/btn_trans_on_RUS"
         android:layout_centerHorizontal="true" />
-
-
-
 </RelativeLayout>

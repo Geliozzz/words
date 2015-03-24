@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="oxbao.ru.words" >
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_label"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="oxbao.ru.dasWort.MainActivity"
+            android:name=".ActivityMain"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name="oxbao.ru.dasWort.AddWordActivity"
+            android:name=".ActivityAddWord"
             android:windowSoftInputMode="adjustPan">
             </activity>
-        <activity android:name="oxbao.ru.dasWort.EditDBActivity"></activity>
-        <activity android:name="oxbao.ru.dasWort.DeleteDBActivity"></activity>
-        <activity android:name="oxbao.ru.dasWort.ActivityHelp"></activity>
-        <activity android:name="oxbao.ru.dasWort.UpdateWordActivity"
-            android:windowSoftInputMode="adjustPan">
-            </activity>
-        <activity android:name="oxbao.ru.dasWort.LearnActivity"></activity>
+        <activity android:name=".ActivityEditDB"/>
+        <activity android:name=".ActivityDeleteDB"/>
+        <activity android:name=".ActivityHelp"/>
+        <activity android:name=".ActivityLearn"/>
     </application>
 
 </manifest>

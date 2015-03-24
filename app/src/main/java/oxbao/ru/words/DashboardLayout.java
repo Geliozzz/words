@@ -1,6 +1,7 @@
 package oxbao.ru.words;
 
 
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -130,6 +131,12 @@ public class DashboardLayout extends ViewGroup {
                 }
             } else {
                 // This is a worse whitespace ratio, use the previous value of cols and exit.
+                if(cols == 2)
+                {
+                    hSpace = ((width - mMaxChildWidth * cols) / (cols + 1));
+                    vSpace = ((height - mMaxChildHeight * rows) / (rows + 1));
+                    break;
+                }
                 --cols;
                 rows = (visibleCount - 1) / cols + 1;
                 hSpace = ((width - mMaxChildWidth * cols) / (cols + 1));

@@ -1,5 +1,6 @@
 package oxbao.ru.words;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
@@ -14,10 +15,14 @@ public class Word implements Parcelable, Comparable {
     private int id;
     private String eng;
     private String rus;
+    private int repeat = 0; // было ли повторено
+    private int count = 0; // сколько правильных ответов
 
     public Word(String eng, String rus) {
         this.eng = eng;
         this.rus = rus;
+        repeat = 0;
+        count = 0;
     }
 
     public Word() {
@@ -57,6 +62,26 @@ public class Word implements Parcelable, Comparable {
 
     public void setRus(String rus) {
         this.rus = rus;
+    }
+
+    public int getRepeat()
+    {
+        return repeat;
+    }
+
+    public void setRepeat(int repeat)
+    {
+        this.repeat = repeat;
+    }
+
+    public int getCount()
+    {
+        return count;
+    }
+
+    public void setCount(int count)
+    {
+        this.count = count;
     }
 
     @Override

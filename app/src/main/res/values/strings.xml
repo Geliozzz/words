@@ -10,7 +10,7 @@
     <string name="del_word">Удалить</string>
     <string name="edit">Редактировать</string>
     <string name="delete">Удалить</string>
-    <string name="English">Английский</string>
+    <string name="English">Немецкий</string>
     <string name="Russian">Русский</string>
     <string name="update_word">Записать</string>
     <string name="right">Верно!</string>
@@ -23,7 +23,7 @@
     <string name="alert_no">Нет</string>
     <string name="alert_yes">Да</string>
     <string name="translate">Перевести</string>
-    <string name="translate_on_english">Перевод на английский</string>
+    <string name="translate_on_english">Перевод на немецкий</string>
     <string name="translate_on_russian">Перевод на русский</string>
     <string name="statistic">Стат.</string>
     <string name="help">справка</string>

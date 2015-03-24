@@ -1,6 +1,7 @@
 package oxbao.ru.words;
 
 
+
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 

@@ -1,5 +1,6 @@
 package oxbao.ru.words;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,22 +9,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity {
+public class ActivityMain extends ActionBarActivity {
 
-    private static final String CLIENT_ID = "words_translate";
-    private static final String CLIENT_SECRET = "70qhkTNyF9Y42Mljtbt7hUC5rcT8mmOd/QdCjBkRm1U=";
+    public static Executor g_executor = Executor.getInstance();
 
-    public static String getClientId() {
-        return CLIENT_ID;
-    }
 
-    public static String getClientSecret() {
-        return CLIENT_SECRET;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_layout);
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        g_executor.createDB(getBaseContext());
+        //*******************************************
 
         getSupportActionBar();
 
@@ -35,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
         btn_addWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), AddWordActivity.class);
+                Intent i = new Intent(getApplicationContext(), ActivityAddWord.class);
                 startActivity(i);
             }
         });
@@ -43,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
         btn_edit_DB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), EditDBActivity.class);
+                Intent i = new Intent(getApplicationContext(), ActivityEditDB.class);
                 startActivity(i);
             }
         });
@@ -51,14 +48,14 @@ public class MainActivity extends ActionBarActivity {
         btn_del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), DeleteDBActivity.class);
+                Intent i = new Intent(getApplicationContext(), ActivityDeleteDB.class);
                 startActivity(i);
             }
         });
         btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LearnActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ActivityLearn.class);
                 startActivity(intent);
             }
         });
